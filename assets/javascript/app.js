@@ -3,7 +3,7 @@ $(document).ready(function () {
 	// Create a function that creates the start button and initial screen
 
 	function initialScreen() {
-		startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Enter Game of Thrones Quiz</a></p>";
+		startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Enter Game of Thrones Quiz</a><img class='center-block img-right' src='assets/images/spoilers.gif' height=250px></p>"
 		$(".mainArea").html(startScreen);
 
 	}
@@ -18,6 +18,7 @@ $("body").on("click", ".start-button", function(event){
 	clickSound.play();
 	generateHTML();
 	var audio = new Audio("assets/music/got.mp3");
+	audio.loop = true
 	audio.play();
 	timerWrapper();
 
@@ -59,7 +60,7 @@ function generateWin() {
 	correctTally++;
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
 	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 4000);  //  4000 is the wait time
+	setTimeout(wait, 5000);  //  4000 is the wait time
 }
 
 function generateLoss() {
@@ -100,7 +101,7 @@ function timerWrapper() {
 }
 
 function finalScreen() {
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
+	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>What do we say to the Lord of Death? Not today ― George R.R. Martin, A Game of Thrones. Here's how you did!" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
 	$(".mainArea").html(gameHTML);
 }	
 
@@ -189,13 +190,18 @@ var imageArray = [
 	"<img class='center-block img-right' src='assets/images/icesword.jpg' height=400px>",
 	"<img class='center-block img-right' src='assets/images/bronnarrow.jpg'>",
 	"<img class='center-block img-right' src='assets/images/oberyn.png' height=400px>",
-	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
-	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
-	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
-	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
-	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
-	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
-	"<img class='center-block img-right' src='assets/images/ladychain.gif'>"
+	"<img class='center-block img-right' src='assets/images/dragonglass.gif'>",
+	"<img class='center-block img-right' src='assets/images/ramsayArrow.gif'>",
+	"<img class='center-block img-right' src='assets/images/tyrion-varys.gif'>",
+	"<img class='center-block img-right' src='assets/images/sansa.gif'>",
+	"<img class='center-block img-right' src='assets/images/wights.gif'>",
+	"<img class='center-block img-right' src='assets/images/nightswatch.gif' height=500px>",
+	"<img class='center-block img-right' src='assets/images/hodor.gif'>",
+	"<img class='center-block img-right' src='assets/images/dawn.gif'>",
+	"<img class='center-block img-right' src='assets/images/longclaw.gif'>",
+	"<img class='center-block img-right' src='assets/images/housemormont.jpg' height=400px>",
+	"<img class='center-block img-right' src='assets/images/icemelted.gif'>",
+	"<img class='center-block img-right' src='assets/images/longclawpomel.png' height=400px>",
 ];
 var correctAnswers = [
 	"B. In a funeral pyre",
