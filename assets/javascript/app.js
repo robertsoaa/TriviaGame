@@ -14,7 +14,7 @@ initialScreen();
 
 
 $("body").on("click", ".start-button", function(event){
-	event.preventDefault();  // added line to test issue on GitHub Viewer
+	event.preventDefault(); 
 	clickSound.play();
 	generateHTML();
 	var audio = new Audio("assets/music/got.mp3");
@@ -186,9 +186,9 @@ var imageArray = [
 	"<img class='center-block img-right' src='assets/images/ariablind.gif'>",
 	"<img class='center-block img-right' src='assets/images/joffrydies.gif'>",
 	"<img class='center-block img-right' src='assets/images/sirpounce.jpg'>",
-	"<img class='center-block img-right' src='assets/images/icesword.jpg'>",
+	"<img class='center-block img-right' src='assets/images/icesword.jpg' height=400px>",
 	"<img class='center-block img-right' src='assets/images/bronnarrow.jpg'>",
-	"<img class='center-block img-right' src='assets/images/oberyn.png'>",
+	"<img class='center-block img-right' src='assets/images/oberyn.png' height=400px>",
 	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
 	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
 	"<img class='center-block img-right' src='assets/images/ladychain.gif'>",
@@ -266,7 +266,7 @@ function resetGame() {
 	generateHTML();
 	timerWrapper();
 }
-//Create a function, generateHTML(), that is triggered by the start button, and generates the HTML seen on the project video...
+//Creates generateHTML() function, that is triggered by the start button.
 
 function generateHTML() {
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
